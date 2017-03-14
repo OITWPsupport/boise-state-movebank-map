@@ -14,7 +14,7 @@
                 timeDisplay = document.getElementById("time-display-div");
                 map.controls[google.maps.ControlPosition.TOP_CENTER].push(timeDisplay);
 
-                $.getJSON(jsonUrl + "?callback=?", {
+                jQuery.getJSON(jsonUrl + "?callback=?", {
                     study_id: study_id,
                     individual_local_identifiers: individual_local_identifiers,
                     max_events_per_individual : max_events_per_individual,
@@ -45,10 +45,10 @@
                             }
                         }
                     }
-                    $(function () {
+                    jQuery(function () {
                     	maxDate = new Date(endDate);
                     	maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate() + 1);
-                        $('#time-display').datepicker({
+                        jQuery('#time-display').datepicker({
                             showOn: "button",
                             buttonImageOnly: true,
                             buttonImage: "https://www.google.com/help/hc/images/sites_icon_calendar_small.gif",
@@ -57,17 +57,17 @@
                             maxDate: maxDate,
                             dateFormat: 'yy-mm-dd',
                             onSelect: function (dateText) {
-                                date = $(this).datepicker('getDate');
+                                date = jQuery(this).datepicker('getDate');
                                 t = new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000).getTime();
                                 for (i = 0; i < data.individuals.length; i++)
                                     showClosestPointInTime(data.individuals[i], t);
-                              	$(this).data('datepicker').inline = true;                                      
+                              	jQuery(this).data('datepicker').inline = true;                                      
                             },
                         	onClose: function() {
-                            	$(this).data('datepicker').inline = false;
+                            	jQuery(this).data('datepicker').inline = false;
                         	}                        
                         });
-                        $('#time-display').datepicker('setDate', new Date(endDate));
+                        jQuery('#time-display').datepicker('setDate', new Date(endDate));
                     });
                     for (i = 0; i < data.individuals.length; i++)
                         showClosestPointInTime(data.individuals[i], endDate);
@@ -150,7 +150,7 @@
                     for (i = 0; i < data.individuals.length; i++)
                         if (data.individuals[i] != individual)
                             showClosestPointInTime(data.individuals[i], t);
-                    $('#time-display').datepicker('setDate', new Date(t));
+                    jQuery('#time-display').datepicker('setDate', new Date(t));
                 }
 
                 function getPointClosestToLine(x1, y1, x2, y2, x3, y3) {
