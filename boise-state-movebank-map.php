@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boise State Movebank Map
 Description: A custom plugin by Boise State for displaying Movebank animal tracking data
-Version: 0.0.4
+Version: 0.0.5
 */
 
 function bsu_movebank_shortcode() {
@@ -19,7 +19,7 @@ function bsu_movebank_shortcode() {
 	wp_register_script( 'movebank',  plugins_url( '/movebank.js', __FILE__ ) );
 	wp_enqueue_script( 'movebank' );
 
-	$str = '<div id="map-canvas" style="width: 600px; height: 700px"></div></div>';
+	$str = '<div id="map-canvas" style="width: 600px; height: 700px;></div>';
 
 	return $str;
 }

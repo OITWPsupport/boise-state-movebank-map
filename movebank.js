@@ -8,11 +8,11 @@
                 });
 
                 movebankLogo = document.createElement('div');
-                movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="https://strd.de/logo_movebank_gmap6.png" alt="movebank.org logo" height=23px/></a>';
+                movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="http://strd.de/logo_movebank_gmap6.png" alt="movebank.org logo" height="23px" style="box-shadow: 0 0 0 0px #fff"/></a>';
                 map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(movebankLogo);
 
-                timeDisplay = document.getElementById("time-display-div");
-                map.controls[google.maps.ControlPosition.TOP_CENTER].push(timeDisplay);
+//                timeDisplay = document.getElementById("time-display-div");
+//                map.controls[google.maps.ControlPosition.TOP_CENTER].push(timeDisplay);
 
                 jQuery.getJSON(jsonUrl + "?callback=?", {
                     study_id: study_id,
@@ -73,8 +73,8 @@
 */
                     for (i = 0; i < data.individuals.length; i++)
                         showClosestPointInTime(data.individuals[i], endDate);
-                    document.getElementById('time-display').readOnly = true;
-                    document.getElementById('time-display').style.width = 75;
+ //                   document.getElementById('time-display').readOnly = true;
+ //                   document.getElementById('time-display').style.width = 75;
                 });
 
                 function setBounds() {
@@ -152,7 +152,7 @@
                     for (i = 0; i < data.individuals.length; i++)
                         if (data.individuals[i] != individual)
                             showClosestPointInTime(data.individuals[i], t);
-                    jQuery('#time-display').datepicker('setDate', new Date(t));
+//                    jQuery('#time-display').datepicker('setDate', new Date(t));
                 }
 
                 function getPointClosestToLine(x1, y1, x2, y2, x3, y3) {
