@@ -45,6 +45,7 @@
                             }
                         }
                     }
+/*
                     jQuery(function () {
                     	maxDate = new Date(endDate);
                     	maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate() + 1);
@@ -69,6 +70,7 @@
                         });
                         jQuery('#time-display').datepicker('setDate', new Date(endDate));
                     });
+*/
                     for (i = 0; i < data.individuals.length; i++)
                         showClosestPointInTime(data.individuals[i], endDate);
                     document.getElementById('time-display').readOnly = true;

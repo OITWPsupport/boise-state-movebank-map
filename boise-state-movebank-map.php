@@ -26,7 +26,10 @@ function bsu_movebank_shortcode() {
 	wp_register_script( 'movebank',  plugins_url( '/movebank.js', __FILE__ ) );
 	wp_enqueue_script( 'movebank' );
 
-	$str = '<div id="map-canvas" style="width: 600px; height: 700px"></div><div id="time-display-div"><input type="text" id="time-display" style="border: none; font-weight: bold; color: #FFFFFF; background: transparent; margin-top: 7px; width: 0px"></input></div></div>';
+//	$str = '<div id="map-canvas" style="width: 600px; height: 700px"></div><div id="time-display-div"><input type="text" id="time-display" style="border: none; font-weight: bold; color: #FFFFFF; background: transparent; margin-top: 7px; width: 0px"></input></div></div>';
+
+	$str = '<div id="map-canvas" style="width: 600px; height: 700px"></div></div>';
+
 	return $str;
 }
 
