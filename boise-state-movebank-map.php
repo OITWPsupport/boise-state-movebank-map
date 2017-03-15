@@ -2,7 +2,7 @@
 /*
 Plugin Name: Boise State Movebank Map
 Description: A custom plugin by Boise State for displaying Movebank animal tracking data
-Version: 0.0.5
+Version: 0.0.6
 */
 
 function bsu_movebank_shortcode() {
