@@ -8,7 +8,7 @@
                 });
 
                 movebankLogo = document.createElement('div');
-                movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="https://strd.de/logo_movebank_gmap6.png" height=23px/></a>';
+                movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="https://strd.de/logo_movebank_gmap6.png" alt="movebank.org logo" height=23px style="box-shadow: 0 0 0 0px #fff" /></a>';
                 map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(movebankLogo);
 
                 timeDisplay = document.getElementById("time-display-div");
