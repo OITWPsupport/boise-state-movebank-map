@@ -1,8 +1,10 @@
 <?php
 /*
 Plugin Name: Boise State Movebank Map
+Plugin URI: https://github.com/OITWPsupport/boise-state-movebank-map/releases
 Description: A custom plugin by Boise State for displaying Movebank animal tracking data
-Version: 0.1.0
+Version: 0.1.1
+Author URI: https://webguide.boisestate.edu/
 */
 
 function bsu_movebank_shortcode() {
