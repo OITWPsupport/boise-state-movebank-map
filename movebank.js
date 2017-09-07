@@ -11,7 +11,7 @@
                 movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="http://strd.de/logo_movebank_gmap6.png" alt="movebank.org logo" height=23px style="box-shadow: 0 0 0 0px #fff" /></a>';
                 map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(movebankLogo);
 
-                timeDisplay = document.getElementById("time-display-div");
+                timeDisplay = document.getElementById("datepicker-input");
                 map.controls[google.maps.ControlPosition.TOP_CENTER].push(timeDisplay);
 
                 jQuery.getJSON(jsonUrl + "?callback=?", {
@@ -29,7 +29,6 @@
                     setBounds();
                     createMarkers();
                     createPolylines();
-                    //createPolylines2();
 
                     startDate = null;
                     endDate = null;
@@ -48,7 +47,8 @@
                     jQuery(function () {
                     	maxDate = new Date(endDate);
                     	maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate() + 1);
-                        jQuery('#time-display').datepicker({
+
+                        jQuery('#datepicker-input').datepicker({
                             showOn: "button",
                             buttonImageOnly: true,
                             buttonImage: "https://www.google.com/help/hc/images/sites_icon_calendar_small.gif",
@@ -67,12 +67,13 @@
                             	jQuery(this).data('datepicker').inline = false;
                         	}                        
                         });
-                        jQuery('#time-display').datepicker('setDate', new Date(endDate));
+                        jQuery('#datepicker-input').datepicker('setDate', new Date(endDate));
+
                     });
                     for (i = 0; i < data.individuals.length; i++)
                         showClosestPointInTime(data.individuals[i], endDate);
-                    document.getElementById('time-display').readOnly = true;
-                    document.getElementById('time-display').style.width = 75;
+                    document.getElementById('datepicker-input').readOnly = true;
+                    document.getElementById('datepicker-input').style.width = 75;
                 });
 
                 function setBounds() {
@@ -150,7 +151,7 @@
                     for (i = 0; i < data.individuals.length; i++)
                         if (data.individuals[i] != individual)
                             showClosestPointInTime(data.individuals[i], t);
-                    jQuery('#time-display').datepicker('setDate', new Date(t));
+	                    jQuery('#datepicker-input').datepicker('setDate', new Date(t));
                 }
 
                 function getPointClosestToLine(x1, y1, x2, y2, x3, y3) {
@@ -355,34 +356,5 @@
                         })(data.individuals[i]));
                     }
                 }
-
-                function createPolylines2() {
-                    icons = [{
-                            icon: {
-                                path: google.maps.SymbolPath.CIRCLE
-                            },
-                            offset: 0
-                        }
-                    ];
-                    for (i = 0; i < data.individuals.length; i++) {
-                        for (j = 0; j < data.individuals[i].locations.length - 1; j++) {
-                            new google.maps.Polyline({
-                                path: [new google.maps.LatLng(
-                                        data.individuals[i].locations[j].location_lat,
-                                        data.individuals[i].locations[j].location_long),
-                                        new google.maps.LatLng(
-                                        data.individuals[i].locations[j].location_lat,
-                                        data.individuals[i].locations[j].location_long)
-                                ],
-                                clickable: false,
-                                strokeColor: data.individuals[i].color,
-                                strokeOpacity: 1,
-                                strokeWeight: 2,
-                                icons: icons
-                            }).setMap(map);
-                        }
-                    }
-                }
-
             }
 
