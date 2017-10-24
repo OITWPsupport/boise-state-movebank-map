@@ -13,7 +13,7 @@ function bsu_movebank_shortcode() {
 	wp_enqueue_script('params');
 
 	wp_enqueue_script( 'jquery-ui-datepicker' );
-	wp_enqueue_style('e2b-admin-ui-css','http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css',false,"1.9.0",false);
+	wp_enqueue_style('e2b-admin-ui-css','https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css',false,"1.9.0",false);
 	// This one is on the advice of http://jafty.com/blog/tag/how-to-use-jquery-ui-in-wordpress/
 
 	wp_register_script( 'googlemapsapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAanKKo7ZlWfz9KvGskNG8MrDE8sInt4Cs&libraries=visualization,geometry' );
